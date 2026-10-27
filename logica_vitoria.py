@@ -21,3 +21,13 @@ tabuleiro_exemplo = [
 ]
 
 print("Módulo de verificação de vitória carregado com sucesso!")
+
+def verificar_vitoria_diagonais(tabuleiro, jogador):
+    # Verifica a diagonal principal
+    if tabuleiro[0][0] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][2] == jogador:
+        return True
+    # Verifica a diagonal secundária
+    if tabuleiro[0][2] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][0] == jogador:
+        return True
+        
+    return False
