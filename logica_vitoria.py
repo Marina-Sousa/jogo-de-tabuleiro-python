@@ -1,17 +1,5 @@
-# Módulo de Verificação de Vitória - Jogo da Velha
+# Módulo de Verificação de Vitória - Jogo da Velha (correção de requisitos permitidos)
 # Integrante: Sílvia
-
-def verificar_vitoria_linhas_colunas(tabuleiro, jogador):
-    # Verifica as linhas e colunas usando laços for
-    for i in range(3):
-        # Verifica linha 'i'
-        if tabuleiro[i][0] == jogador and tabuleiro[i][1] == jogador and tabuleiro[i][2] == jogador:
-            return True
-        # Verifica coluna 'i'
-        if tabuleiro[0][i] == jogador and tabuleiro[1][i] == jogador and tabuleiro[2][i] == jogador:
-            return True
-            
-    return False
 
 # Estrutura inicial do tabuleiro de teste
 tabuleiro_exemplo = [
@@ -20,14 +8,24 @@ tabuleiro_exemplo = [
     [" ", " ", " "]
 ]
 
-print("Módulo de verificação de vitória carregado com sucesso!")
+# Variável para testar o jogador atual
+jogador_atual = "X"
+vitoria = False
 
-def verificar_vitoria_diagonais(tabuleiro, jogador):
-    # Verifica a diagonal principal
-    if tabuleiro[0][0] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][2] == jogador:
-        return True
-    # Verifica a diagonal secundária
-    if tabuleiro[0][2] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][0] == jogador:
-        return True
-        
-    return False
+# Verificação de linhas e colunas usando laços for
+for i in range(3):
+    if tabuleiro_exemplo[i][0] == jogador_atual and tabuleiro_exemplo[i][1] == jogador_atual and tabuleiro_exemplo[i][2] == jogador_atual:
+        vitoria = True
+    if tabuleiro_exemplo[0][i] == jogador_atual and tabuleiro_exemplo[1][i] == jogador_atual and tabuleiro_exemplo[2][i] == jogador_atual:
+        vitoria = True
+
+# Verificação das diagonais
+if tabuleiro_exemplo[0][0] == jogador_atual and tabuleiro_exemplo[1][1] == jogador_atual and tabuleiro_exemplo[2][2] == jogador_atual:
+    vitoria = True
+if tabuleiro_exemplo[0][2] == jogador_atual and tabuleiro_exemplo[1][1] == jogador_atual and tabuleiro_exemplo[2][0] == jogador_atual:
+    vitoria = True
+
+if vitoria:
+    print("Vitória detectada!")
+else:
+    print("Nenhuma vitória ainda.")
