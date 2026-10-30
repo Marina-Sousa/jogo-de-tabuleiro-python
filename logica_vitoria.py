@@ -29,3 +29,13 @@ if vitoria:
     print("Vitória detectada!")
 else:
     print("Nenhuma vitória ainda.")
+
+    # Verificação de empate (conta quantas casas ainda estão vazias)
+vazias = 0
+for i in range(3):
+    for j in range(3):
+        if tabuleiro_exemplo[i][j] == " ":
+            vazias = vazias + 1
+
+if vazias == 0 and vitoria == False:
+    print("Deu empate!")
