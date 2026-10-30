@@ -39,3 +39,17 @@ for i in range(3):
 
 if vazias == 0 and vitoria == False:
     print("Deu empate!")
+
+    # Placar acumulado entre as partidas
+vitorias_jogador_x = 0
+vitorias_jogador_o = 0
+total_empates = 0
+
+# Exemplo de atualização após o término de uma partida
+# (Você pode incrementar essas variáveis quando houver vitória ou empate)
+vitorias_jogador_x = vitorias_jogador_x + 1
+
+print("Placar Final:")
+print("Jogador X:", vitorias_jogador_x)
+print("Jogador O:", vitorias_jogador_o)
+print("Empates:", total_empates)
